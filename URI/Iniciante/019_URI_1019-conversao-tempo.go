@@ -2,20 +2,17 @@ package main
      import "fmt"
 
      func main(){
-          var valor int
+          var valorEntrada, hora, minuto, segundo ,resto int
 
-          fmt.Scanf("%d\n", &valor)
-          fmt.Print(valor,"\n")
+          fmt.Scanf("%d\n", &valorEntrada)
 
-          for i, valorFinal := 0, valor; i < len(moedas); i++ {
-               cont, resto = conversorMoeda(valorFinal, moedas[i])
-               fmt.Printf("%d nota(s) de R$ %d,00\n", cont, moedas[i])
-               valorFinal = resto
-          }
-     }
-     func conversorMoeda(valorEntrada, moderador int) (contador, resto int){
-          resto = (valorEntrada % moderador)
-          contador =  (valorEntrada - resto) / moderador
+          resto = valorEntrada % 3600
+          hora = (valorEntrada - resto) / 3600
+          valorEntrada = resto
 
-          return
+          resto = valorEntrada % 60
+          minuto = (valorEntrada - resto) / 60
+          segundo = resto
+
+          fmt.Print(hora,":", minuto ,":", segundo,"\n")
      }
