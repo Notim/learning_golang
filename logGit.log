@@ -1,26 +1,10 @@
+=========== 2018-09-24 ===========
 From https://github.com/Notim/Learning_GoLang
  * branch            master     -> FETCH_HEAD
 Already up to date.
 No ramo master
-Your branch is up to date with 'origin/master'.
-
-Arquivos não monitorados:
-  (utilize "git add <arquivo>..." para incluir o que será submetido)
-
-	logGit.log
-
-nada adicionado ao envio mas arquivos não registrados estão presentes (use "git add" to registrar)
-[master 0d01e60] Up
- 1 file changed, 12 insertions(+)
- create mode 100644 logGit.log
-To https://github.com/Notim/Learning_GoLang.git
-   2ad4de7..0d01e60  master -> master
-======================= date +%Y-%m-%d ===========================
-From https://github.com/Notim/Learning_GoLang
- * branch            master     -> FETCH_HEAD
-Already up to date.
-No ramo master
-Your branch is up to date with 'origin/master'.
+Seu ramo está à frente de 'origin/master' por 1 submissão.
+  (use "git push" to publish your local commits)
 
 Changes not staged for commit:
   (utilize "git add <arquivo>..." para atualizar o que será submetido)
