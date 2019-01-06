@@ -4,7 +4,6 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-	"reflect"
 	"strconv"
 	"strings"
 )
@@ -20,7 +19,7 @@ type DateTime struct {
 func main() {
 	reader := bufio.NewReader(os.Stdin)
 
-	fmt.Println(reflect.TypeOf(reader))
+	// fmt.Println(reflect.TypeOf(reader))
 
 	var (
 		FirstDay DateTime
