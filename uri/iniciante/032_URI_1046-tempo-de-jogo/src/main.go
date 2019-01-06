@@ -1,20 +1,20 @@
 package main
 
-	import (
-		io "fmt"
-		sys "os"
-	)
+import (
+	io "fmt"
+	sys "os"
+)
 
-	func main(){
-		var hi, hf, cont int
+func main() {
+	var hi, hf, cont int
 
-		io.Scanf("%d %d", &hi, &hf)
-		cont = (24 - hi) + hf
+	io.Scanf("%d %d", &hi, &hf)
+	cont = (24 - hi) + hf
 
-		if(cont > 24){
-			cont = cont - 24
-		}
-
-		io.Printf("O JOGO DUROU %d HORA(S)\n", cont);
-		sys.Exit(0)
+	if cont > 24 {
+		cont = cont - 24
 	}
+
+	io.Printf("O JOGO DUROU %d HORA(S)\n", cont)
+	sys.Exit(0)
+}

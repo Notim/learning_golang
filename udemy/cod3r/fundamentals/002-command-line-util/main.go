@@ -1,4 +1,4 @@
-﻿/*
+/*
 ok, the code below means that go has its own package manager! (more or less)
 it gets the source code of the github repository and places it in $ GOPATH (env variable).
 the default is "~/user/go" in unix-like and "C:\Users\username\go" in win
@@ -20,6 +20,6 @@ package main
 
 import "fmt"
 
-func main(){
-    fmt.Println("please, see the source to understand the chapter!!")
+func main() {
+	fmt.Println("please, see the source to understand the chapter!!")
 }

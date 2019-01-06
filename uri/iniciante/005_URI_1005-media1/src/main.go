@@ -1,13 +1,16 @@
 package main
-import("fmt")
 
-func main()  {
-     var  notaA, notaB float64
+import (
+	"fmt"
+)
 
-     fmt.Scanf("%f\n", &notaA)
-     fmt.Scanf("%f\n", &notaB)
+func main() {
+	var notaA, notaB float64
 
-     resultado := ((notaA * 3.5) + (notaB * 7.5)) / 11
+	fmt.Scanf("%f\n", &notaA)
+	fmt.Scanf("%f\n", &notaB)
 
-     fmt.Printf("MEDIA = %.5f\n", resultado)
+	resultado := ((notaA * 3.5) + (notaB * 7.5)) / 11
+
+	fmt.Printf("MEDIA = %.5f\n", resultado)
 }

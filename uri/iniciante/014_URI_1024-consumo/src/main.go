@@ -1,13 +1,14 @@
 package main
-     import "fmt"
 
-     var distancia int
-     var gasto float64
+import "fmt"
 
-     func main()  {
-          fmt.Scanf("%d\n", &distancia)
-          fmt.Scanf("%f", &gasto)
-          media := float64(distancia) / gasto
+var distancia int
+var gasto float64
 
-          fmt.Printf("%.3f km/l\n", media)
-     }
+func main() {
+	fmt.Scanf("%d\n", &distancia)
+	fmt.Scanf("%f", &gasto)
+	media := float64(distancia) / gasto
+
+	fmt.Printf("%.3f km/l\n", media)
+}

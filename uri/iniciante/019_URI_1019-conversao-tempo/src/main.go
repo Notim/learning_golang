@@ -1,18 +1,19 @@
 package main
-     import "fmt"
 
-     func main(){
-          var valorEntrada, hora, minuto, segundo ,resto int
+import "fmt"
 
-          fmt.Scanf("%d\n", &valorEntrada)
+func main() {
+	var valorEntrada, hora, minuto, segundo, resto int
 
-          resto = valorEntrada % 3600
-          hora = (valorEntrada - resto) / 3600
-          valorEntrada = resto
+	fmt.Scanf("%d\n", &valorEntrada)
 
-          resto = valorEntrada % 60
-          minuto = (valorEntrada - resto) / 60
-          segundo = resto
+	resto = valorEntrada % 3600
+	hora = (valorEntrada - resto) / 3600
+	valorEntrada = resto
 
-          fmt.Print(hora,":", minuto ,":", segundo,"\n")
-     }
+	resto = valorEntrada % 60
+	minuto = (valorEntrada - resto) / 60
+	segundo = resto
+
+	fmt.Print(hora, ":", minuto, ":", segundo, "\n")
+}
