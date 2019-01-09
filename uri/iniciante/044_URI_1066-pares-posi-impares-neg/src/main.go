@@ -1,12 +1,11 @@
 package main
 
-import (
-	"bufio"
-	"fmt"
-	"os"
-	"strconv"
-	"strings"
-)
+import 	"bufio"
+import 	"fmt"
+import 	"os"
+import 	"strconv"
+import 	"strings"
+
 
 // @struct with counters and Values
 type Numbers struct {
@@ -65,11 +64,16 @@ func (numInfo Numbers) ShowClassification(lang string) Numbers{
 
 func main() {
 	reader := bufio.NewReader(os.Stdin)
-
 	var (
 		info Numbers
 		input int
+		in String
 	)
+	in = "ola caralho";
+
+	fmt.Println(in.IsNullOrEmpty())
+	fmt.Println(in.Lenght())
+	fmt.Println(in.Reversed())
 
 	for index := 0 ; index < 5; index++ {
 		input, _ = strconv.Atoi(ReadLine(reader))
