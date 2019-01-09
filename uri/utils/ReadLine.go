@@ -6,7 +6,7 @@ import (
 )
 
 // reader := bufio.NewReader(os.Stdin)
-	
+
 func ReadLine(reader *bufio.Reader) string {
 	input, _ := reader.ReadString('\n')
 
@@ -19,5 +19,5 @@ func ClearStr(str string) string {
 	str = strings.TrimSuffix(str, "\t")
 	str = strings.TrimSuffix(str, "\r\n")
 
-	return str
+ 	return str
 }
