@@ -76,4 +76,23 @@ func main() {
 	fmt.Println(Add()) // index(private) = 2
 	fmt.Println(Add()) // index(private) = 3
 	fmt.Println(Add()) // index(private) = 4
+
+	/**
+	 * literals anon functions in go/js-similar lambda expr
+	**/
+	// Js similar: () => "some String Value"
+	NoArgsRetStr :=  func() string {return "some String Value"} // no args return string
+	fmt.Println(NoArgsRetStr())
+
+	// Js similar: (arg) => "some String Value" + arg
+	WithArgsRetStr := func(arg string) string {return "some String" + arg} // with string args and return string
+	fmt.Println(WithArgsRetStr("Value"))
+
+	// Js similar: () => {console.log("Some String Value")}
+	NoArgNoRet := func() {fmt.Println("Some String Value")} // no args no return (void)
+	NoArgNoRet()
+
+	// Js similar: (arg) => {console.log("Some String Value" + arg)}
+	WithArgNoRet := func(arg string) {fmt.Println("Some String " + arg)}
+	WithArgNoRet ("Value")
 }

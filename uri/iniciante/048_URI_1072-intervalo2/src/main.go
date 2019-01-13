@@ -74,6 +74,7 @@ func main() {
 
 	fmt.Printf("%v in\n", num.inCount)
 	fmt.Printf("%v out\n", num.outCount)
+
 }
 
 func ReadLine(reader *bufio.Reader) string {
