@@ -76,5 +76,4 @@ func main() {
 	fmt.Println(Add()) // index(private) = 2
 	fmt.Println(Add()) // index(private) = 3
 	fmt.Println(Add()) // index(private) = 4
-
 }
