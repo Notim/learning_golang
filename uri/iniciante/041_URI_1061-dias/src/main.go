@@ -28,12 +28,12 @@ func main() {
 		sentence string
 	)
 
-	data = ReadLine(reader)
+	data 	 = ReadLine(reader)
 	sentence = ReadLine(reader)
 
 	FirstDay = ReadDate(sentence, data)
 
-	data = ReadLine(reader)
+	data 	 = ReadLine(reader)
 	sentence = ReadLine(reader)
 
 	SecondDay = ReadDate(sentence, data)

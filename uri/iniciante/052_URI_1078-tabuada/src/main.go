@@ -2,7 +2,6 @@ package main
 
 import (
 	"bufio"
-	"math"
 )
 import 	"fmt"
 import 	"os"
@@ -16,15 +15,11 @@ func main() {
 		err error
 	)
 
-	loop , err := strconv.Atoi(ReadLine(reader))
+	num , err := strconv.Atoi(ReadLine(reader))
 	Except(err)
 
-	for index := 1; index <= loop; index++ {
-		if index % 2 == 0 {
-			sentence := strconv.Itoa(index)+"^2"+" ="
-
-			fmt.Printf("%v %.f\n",sentence, math.Pow(float64(index), 2))
-		}
+	for index := 1; index <= 10; index++ {
+		fmt.Printf("%d x %d = %d\n",index, num, (index * num))
 	}
 }
 
