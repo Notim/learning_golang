@@ -20,7 +20,7 @@ func (T ListFloat) Filter(predicate func(current float64) bool) (tempList ListFl
     return
 }
 
-func (T ListString) Filter(predicate func(current string) bool) (tempList string){
+func (T ListString) Filter(predicate func(current string) bool) (tempList []string){
     for index := 0; index < len(T); index++ {
         if predicate(T[index]) {
             tempList = append(tempList, T[index])
