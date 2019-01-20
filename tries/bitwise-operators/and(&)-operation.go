@@ -27,7 +27,12 @@ func main() {
      * Operador AND (&) :
      * Compara Bit por Bit se o valor eh igual, caso sim ele retorna 1 senao 0 [na posiçao do bit]
      * o mais daora desse tipo de operaçao, eh que os resultados nao fazem sentido kk
-     * (1 & 1 = 1 | 1 & 0 = 0 | 0 & 1 = 0 | 0 & 0 = 1)
+     *
+     * Tabela verdade
+     *  1 & 1 = 1
+     *  1 & 0 = 0
+     *  0 & 1 = 0
+     *  0 & 0 = 1
      *
      * Exemplos:
      *
