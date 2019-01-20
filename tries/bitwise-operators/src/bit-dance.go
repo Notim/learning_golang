@@ -2,6 +2,7 @@ package main
 
 import (
     "fmt"
+    "os"
     "time"
 )
 
@@ -28,6 +29,7 @@ func main()  {
         }
 
         if s == 0x3f {
+            os.Exit(0)
             val = ^val // 0xFFFFFFFFFFFFFFFF
             s = 0x00
         }
