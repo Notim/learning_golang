@@ -267,3 +267,8 @@ b      00110010 > 0x32 > 050
 ^b     11001101 > 0xCD > 205
 a&(^b) 01000101 > 0x45 > 069
 ```
+
+##### ref :
+[bit-hacking-with-go]("https://medium.com/learning-the-go-programming-language/bit-hacking-with-go-e0acee258827") 
+
+> notim @ 2019
