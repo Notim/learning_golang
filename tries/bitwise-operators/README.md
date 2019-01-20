@@ -9,18 +9,18 @@ para melhorar ainda mais a performace. ou resolver problemas específicos.
 Operações de bitwise são muito usadas em sistemas de criptografia por exemplo.
 
 As existentes em Golang São:
-
+```
 Operadores bitwise  
-&    [bitwise AND](#and)  
-|    [bitwise OR](#or)  
-^    [bitwise XOR](#xor)  
-^    [bitwise NOT (unário)](#not)  
-&^   [bitwise AND NOT](#andnot)  
-<<   [bitwise left shift (writing)](#shiftleft)  
->>   [bitwise right shift(writing)](#shiftright)  
+&    bitwise AND  
+|    bitwise OR 
+^    bitwise XOR 
+^    bitwise NOT (unário) 
+&^   bitwise AND NOT 
+<<   bitwise left shift  
+>>   bitwise right shift 
+```
 
-
-### Operador AND (&): {#and}
+### Operador AND (&):
 Compara Bit por Bit se o valor é igual em ambos, caso sim ele retorna 1 senão 0 na posiçao do bit
 ```
 Tabela verdade
@@ -66,7 +66,7 @@ func main(){
 ```
 
 
-### Operador OR (|) : {#or}
+### Operador OR (|) :
 Compara Bit por Bit e se o valor de pelo menos uma posiçao entre os binarios é 1
 Ele retorna 1 senão 0 na posição do bit
 ```
