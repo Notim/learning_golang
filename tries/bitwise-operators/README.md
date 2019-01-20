@@ -10,7 +10,7 @@ Tabela verdade
     0 & 0 = 1
 ```
 #### Exemplos:
- ```shell
+ ```console
 foo@bar ~:
     (134 & 120 = 0)
       10000110 > 0x86 > 134
