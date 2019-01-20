@@ -269,6 +269,6 @@ a&(^b) 01000101 > 0x45 > 069
 ```
 
 ##### ref :
-[bit-hacking-with-go]("https://medium.com/learning-the-go-programming-language/bit-hacking-with-go-e0acee258827") 
+[bit-hacking-with-go](https://medium.com/learning-the-go-programming-language/bit-hacking-with-go-e0acee258827) 
 
 > notim @ 2019
