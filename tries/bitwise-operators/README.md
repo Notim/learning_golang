@@ -122,6 +122,19 @@ Tabela verdade
     1 ^ 0 = 1
 ```
 
+#### Código:
+```go
+func main(){
+    var val1 byte = 0xAA
+    var val2 byte = 0x63
+    var xor  byte = val1 ^ val2
+
+    fmt.Printf("(%d ^ %d = %d)\n",val1, val2, xor)
+    fmt.Printf("  %8b > 0x%2X > %3d\n", val1, val1, val1)
+    fmt.Printf("^ %8b > 0x%2X > %3d\n", val2, val2, val2)
+    fmt.Printf("= %8b > 0x%2X > %3d\n", xor, xor, xor)
+}
+```
 #### Exemplos:
 ```console
 [notim@Lenovo-ideapad:~]$
@@ -161,6 +174,17 @@ Tabela Verdade
     ^0 = 1
 ```
 
+#### Código:
+```go
+func main(){
+    var val    byte  = 0xA1
+    var not    byte  = ^val // val ^ val
+
+    fmt.Printf("(^%d = %d)\n",val, not)
+    fmt.Printf("   %08b > 0x%02X > %03d\n", val, val, val)
+    fmt.Printf("^  %08b > 0x%02X > %03d\n", not, not, not)
+}
+```
 #### Exemplos:
 ```console
 [notim@Lenovo-ideapad:~]$
@@ -200,7 +224,22 @@ Tabela Verdade
     (a1 == (^b1 = 0)) = 0
     (a0 == (^b1 = 0)) = 1
 ```
+#### Codigo
+```go
+func main(){
+    var val1    byte = 0x67
+    var val2    byte = 0x32
 
+    var andnot byte = val1
+    andnot &^= val2
+
+    fmt.Printf("(%d &^= %d = %d)\n",val1,val2, andnot)
+    fmt.Printf("a      %08b > 0x%02X > %03d\n", val1, val1, val1)
+    fmt.Printf("b      %08b > 0x%02X > %03d\n", val2, val2, val2)
+    fmt.Printf("^b     %08b > 0x%02X > %03d\n", ^val2, ^val2, ^val2)
+    fmt.Printf("a&(^b) %08b > 0x%02X > %03d\n", val1 & ^val2, val1 & ^val2, val1 & ^val2)
+}
+```
 #### Exemplos:
 ```console
 [notim@Lenovo-ideapad:~]$
