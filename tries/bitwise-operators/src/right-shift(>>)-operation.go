@@ -41,7 +41,7 @@ func main()  {
     var val byte = 128
 
     fmt.Printf("(%2d >>1 = %2d)\n", val, val>>1)
-    for i :=1; i <= 8; i++{
+    for i :=0; i <= 8; i++{
         fmt.Printf(">>%d %08b  0x%02X  %03d\n", i, val, val, val)
         val = val>>1
     }

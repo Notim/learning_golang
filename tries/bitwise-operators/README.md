@@ -275,21 +275,21 @@ e onde haviam 1's viram zeros a esquerda.
 ```go
 func main(){
     var val byte = 128
-
-    fmt.Printf("(%2d >>1 = %2d)\n", val, val>>1)
     
-    for i :=1; i <= 8; i++{
+    fmt.Printf("(%2d >>1 = %2d)\n", val, val>>1)
+    for i :=0; i <= 8; i++{
         fmt.Printf(">>%d %08b  0x%02X  %03d\n", i, val, val, val)
         val = val>>1
     }
 }
 ```
-Segue alguns exemplos:
-```
-    11000>>1 = 01100 // 24 >>1 = 12
-    11000>>2 = 00110 // 24 >>2 = 6
-    11000>>3 = 00011 // 24 >>3 = 3
-    11001>>1 = 01100 // 25 >>1 = 12 -> ele empura o ultimo 1 que seria o resto
+Seguem alguns exemplos:
+```console
+[notim@Lenovo-ideapad]$
+11000>>1 = 01100 | 24 >>1 = 12
+11000>>2 = 00110 | 24 >>2 = 6
+11000>>3 = 00011 | 24 >>3 = 3
+11001>>1 = 01100 | 25 >>1 = 12 ==> ele empura o ultimo 1 que seria o resto
 ```
 ```console
 [notim@Lenovo-ideapad]$
