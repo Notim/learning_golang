@@ -367,8 +367,7 @@ func main(){
 <<8 00000000  0x00  000
 ```
 
-projeto de exemplo usando operadores bitwise  
-[Bit dance](https://play.golang.org/p/Tssx6yJxDfK)
+Projeto de exemplo usando operadores bitwise by Notim [Bit dance](https://play.golang.org/p/Tssx6yJxDfK)
 
 ref :  
 [bit-hacking-with-go](https://medium.com/learning-the-go-programming-language/bit-hacking-with-go-e0acee258827)   
