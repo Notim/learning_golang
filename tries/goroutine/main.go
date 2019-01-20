@@ -14,37 +14,29 @@ import (
 **/
 
 func infinityloop(from string) {
-    var run [1e8 + 1e8 + 1e8]int32 // 4bytes * [2e9] => 8000bytes (8kbytes)
+    var run [2e9]int8 // 1byte * 1e9 => 1000000bytes (1GB)
 
     for index , _ := range(run){
         run[index] = 0
-        // if (index % 100000 == 0){
-            //fmt.Printf("%d", 0)
-        //}
     }
-
-    // fmt.Printf("%s : %v\n",from, ShowSize(len(run) * 4))//ShowSize(unsafe.Sizeof(run)))
-    // fmt.Printf("\n%s : %v\n",from, ShowSize(unsafe.Sizeof(run)))
     defer fmt.Printf("%v ==> %v\n" ,from, ShowSize(unsafe.Sizeof(run)))
 }
 func ShowSize(val uintptr) (ret string) {
-    // reflect.TypeOf(val)
-
     ret = fmt.Sprintf("%dB", val)
 
-    if (val > 1e9){
+    if (val >= 1e9){
         val := float64(val) / float64(1e9)
         ret = fmt.Sprintf("%.1fGB", val)
 
         return
     }
-    if (val > 1e6){
+    if (val >= 1e6){
         val := float64(val) / float64(1e6)
         ret = fmt.Sprintf("%.1fMB", val)
 
         return
     }
-    if (val > 1000){
+    if (val >= 1000){
         val := float64(val) / float64(1000)
         ret = fmt.Sprintf("%.1fKB", val)
 
