@@ -10,7 +10,7 @@ Operações de bitwise são muito usadas em sistemas de criptografia por exemplo
 
 As existentes em Golang São:
 
-Operadores bitwise 
+Operadores bitwise  
 [&   bitwise AND](#and)  
 [|   bitwise OR](#or)  
 [^   bitwise XOR](#xor)  
