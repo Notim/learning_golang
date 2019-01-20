@@ -11,13 +11,13 @@ Operações de bitwise são muito usadas em sistemas de criptografia por exemplo
 As existentes em Golang São:
 
 Operadores bitwise  
-[&   bitwise AND](#and)  
-[|   bitwise OR](#or)  
-[^   bitwise XOR](#xor)  
-[^   bitwise NOT (unário)](#not)  
-[&^  bitwise AND NOT](#andnot)  
-[<<  bitwise left shift (writing)](#shiftleft)  
-[>>  bitwise right shift(writing)](#shiftright)  
+&    [bitwise AND](#and)  
+|    [bitwise OR](#or)  
+^    [bitwise XOR](#xor)  
+^    [bitwise NOT (unário)](#not)  
+&^   [bitwise AND NOT](#andnot)  
+<<   [bitwise left shift (writing)](#shiftleft)  
+>>   [bitwise right shift(writing)](#shiftright)  
 
 
 ### Operador AND (&): {#and}
