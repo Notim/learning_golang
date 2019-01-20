@@ -1,25 +1,24 @@
 ## Operadores Bitwise (bit-a-bit) GoLang:
-Em um tempo onde o hardware era escasso e o programador precisava aproveitar cada bit que estava dispon�vel
-existia o recurso de operaç�es bin�rias que eram usadas em v�rias t�cnicas de programaç�o.
+Em um tempo onde o hardware era escasso e o programador precisava aproveitar cada bit que estava disponível
+existia o recurso de operações binárias que eram usadas em várias técnicas de programação.
 
-golang n�o abriu m�o de suportar esses tipos de operaç�es e podem ser ultilizadas em algor�timos 
+GoLang não abriu mão de suportar esses tipos de operações e podem ser ultilizadas em algorítimos 
 para melhorar ainda mais a performace. sendo eles:
- 
 ```
 Operadores bitwise 
  &   bitwise AND
  |   bitwise OR
  ^   bitwise XOR
- ^   bitwise NOT (un�rio)
+ ^   bitwise NOT (unário)
 &^   AND NOT
 <<   left shift
 >>   right shift
 ```
 
-### Operador AND (&) :
-Compara Bit por Bit se o valor é igual, caso sim ele retorna 1 senao 0 na posiçao do bit
-o mais daora desse tipo de operaçao, é que os resultados não fazem sentido kk
 
+
+### Operador AND (&) :
+Compara Bit por Bit se o valor é igual em ambos, caso sim ele retorna 1 senão 0 na posiçao do bit
 ```
 Tabela verdade
     1 & 1 = 1
@@ -27,7 +26,7 @@ Tabela verdade
     0 & 1 = 0
     0 & 0 = 1
 ```
-#### Codigo:
+#### Código:
 ```go
 func main(){
     var val1 byte = 0xAA
@@ -40,9 +39,8 @@ func main(){
     fmt.Printf("= %8b > 0x%2X > %3d\n", and, and, and)
 }
 ```
-
 #### Exemplos:
- ```
+```
 foo@bar ~:
 (134 & 120 = 0)
   10000110 > 0x86 > 134
@@ -63,6 +61,8 @@ foo@bar ~:
 & 01100011 > 0x63 > 99
 = 00100010 > 0x22 > 34
 ```
+
+
 
 ### Operador OR (|) :
 Compara Bit por Bit e se o valor de pelo menos uma posiçao entre os binarios eh 1
