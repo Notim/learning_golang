@@ -122,18 +122,6 @@ Tabela verdade
     1 ^ 0 = 1
 ```
 
-```go
-func main(){
-    var val1 uint8 = 0xAA
-    var val2 uint8 = 0x63
-    var xor  uint8 = val1 ^ val2
-
-    fmt.Printf("(%d ^ %d = %d)\n",val1, val2, xor)
-    fmt.Printf("  %8b > 0x%2X > %3d\n", val1, val1, val1)
-    fmt.Printf("^ %8b > 0x%2X > %3d\n", val2, val2, val2)
-    fmt.Printf("= %8b > 0x%2X > %3d\n", xor, xor, xor)
-}
-```
 #### Exemplos:
 ```
 [notim@Lenovo-ideapad:~]
@@ -143,14 +131,12 @@ func main(){
 = 11110000 > 0xF0 > 240
 ```
 ```
-[notim@Lenovo-ideapad:~]
 (140 ^ 12 = 128)
   10001100 > 0x8C > 140
 ^ 00001100 > 0x0C > 012
 = 10000000 > 0x80 > 128
 ```
 ```
-[notim@Lenovo-ideapad:~]
 (170 ^ 99 = 201)
   10101010 > 0xAA > 170
 ^ 01100011 > 0x63 > 099
@@ -175,25 +161,21 @@ Tabela Verdade
 
 #### Exemplos:
 ```
-[notim@Lenovo-ideapad:~]
 (^255 = 0)
   11111111 > 0xFF > 255
 ^ 00000000 > 0x00 > 000
 ```
 ```
-[notim@Lenovo-ideapad:~]
 (^175 = 80)
   10101111 > 0xAF > 175
 ^ 01010000 > 0x50 > 080
 ```
 ```
-[notim@Lenovo-ideapad:~]
 (^241 = 14)
   11110001 > 0xF1 > 241
 ^ 00001110 > 0x0E > 014
 ```
 ```
-[notim@Lenovo-ideapad:~]
 (^161 = 94)
   10100001 > 0xA1 > 161
 ^ 01011110 > 0x5E > 094
@@ -215,7 +197,7 @@ Tabela Verdade
 
 #### Exemplos:
 ```
-[notim@Lenovo-ideapad:~]
+foo@bar ~:
 (175 &^= 80 = 175)
 a      10101111 > 0xAF > 175
 b      01010000 > 0x50 > 080
@@ -223,7 +205,7 @@ b      01010000 > 0x50 > 080
 a&(^b) 10101111 > 0xAF > 175
 ```
 ```
-[notim@Lenovo-ideapad:~]
+foo@bar ~:
 (255 &^= 0 = 255)
 a      11111111 > 0xFF > 255
 b      00000000 > 0x00 > 000
@@ -231,7 +213,7 @@ b      00000000 > 0x00 > 000
 a&(^b) 11111111 > 0xFF > 255
 ```
 ```
-[notim@Lenovo-ideapad:~]
+foo@bar ~:
 (103 &^= 50 = 69)
 a      01100111 > 0x67 > 103
 b      00110010 > 0x32 > 050
