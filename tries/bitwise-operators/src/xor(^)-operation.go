@@ -4,16 +4,6 @@ import (
     "fmt"
 )
 
-/*
-    bitwise operators
-
-     &   bitwise AND
-     |   bitwise OR
-     ^   bitwise XOR
-    &^   AND NOT
-    <<   left shift
-    >>   right shift
-*/
 func main() {
     /**
      * Operador XOR (^) :
