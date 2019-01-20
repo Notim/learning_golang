@@ -7,14 +7,13 @@ import (
 )
 
 /**
- * Virús que lota a memória e o processamento do computador forçando o travamento do sistema
- * Basicamente são criados varias goroutines que executam a mesma função de loop infinito que faz a concatenação de uma string de forma logarítimica
+ * Basicamente são criados varias goroutines que executam a mesma função de loop que faz o incremento de um slice de bytes
+ * portanto força a reserva de memória do computador forçando o travamento do sistema se estourar a memoria
  * Teste com cuidado saporra !!
  * 2019 @ notim <joao.paulino@yahoo.com.br>
 **/
-
 func infinityloop(from string) {
-    var run [2e9]int8 // 1byte * 1e9 => 1000000bytes (1GB)
+    var run [1e9]int8 // 1byte * 1e9 => 1000000bytes (1GB)
 
     for index , _ := range(run){
         run[index] = 0
@@ -47,7 +46,7 @@ func ShowSize(val uintptr) (ret string) {
 }
 
 func main() {
-    var rontinas map[string]string = make(map[string]string)
+    var rontinas = make(map[string]string)
 
     go (func(arg string) {
         infinityloop(arg)
@@ -64,8 +63,13 @@ func main() {
         rontinas["GO3"] = "Done"
     })("Go 3")
 
+    go (func(arg string) {
+        infinityloop(arg)
+        rontinas["GO4"] = "Done"
+    })("Go 4")
+
     for {
-        if (rontinas["GO1"] == "Done" && rontinas["GO2"] == "Done" && rontinas["GO3"] == "Done") {
+        if (rontinas["GO1"] == "Done" && rontinas["GO2"] == "Done" && rontinas["GO3"] == "Done" && rontinas["GO4"] == "Done") {
             break
         }else {
             time.Sleep(1000)
