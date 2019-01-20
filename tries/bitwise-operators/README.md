@@ -20,7 +20,7 @@ Operadores bitwise
 [>>  bitwise right shift(writing)](#shiftright)  
 
 
-### Operador AND (&) : {#and}
+### Operador AND (&): {#and}
 Compara Bit por Bit se o valor é igual em ambos, caso sim ele retorna 1 senão 0 na posiçao do bit
 ```
 Tabela verdade
@@ -66,8 +66,7 @@ func main(){
 ```
 
 
-
-### Operador OR (|) :
+### Operador OR (|) : {#or}
 Compara Bit por Bit e se o valor de pelo menos uma posiçao entre os binarios é 1
 Ele retorna 1 senão 0 na posição do bit
 ```
