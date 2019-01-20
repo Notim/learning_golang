@@ -1,3 +1,21 @@
+## Operadores Bitwise (bit-a-bit) GoLang:
+Em um tempo onde o hardware era escasso e o programador precisava aproveitar cada bit que estava dispon�vel
+existia o recurso de operaç�es bin�rias que eram usadas em v�rias t�cnicas de programaç�o.
+
+golang n�o abriu m�o de suportar esses tipos de operaç�es e podem ser ultilizadas em algor�timos 
+para melhorar ainda mais a performace. sendo eles:
+ 
+```
+Operadores bitwise 
+ &   bitwise AND
+ |   bitwise OR
+ ^   bitwise XOR
+ ^   bitwise NOT (un�rio)
+&^   AND NOT
+<<   left shift
+>>   right shift
+```
+
 ### Operador AND (&) :
 Compara Bit por Bit se o valor é igual, caso sim ele retorna 1 senao 0 na posiçao do bit
 o mais daora desse tipo de operaçao, é que os resultados não fazem sentido kk
