@@ -9,6 +9,20 @@ Tabela verdade
     0 & 1 = 0
     0 & 0 = 1
 ```
+#### Codigo:
+```go
+func main(){
+    var val1 byte = 0xAA
+    var val2 byte = 0x63
+    var and  byte = val1 & val2
+
+    fmt.Printf("(%d & %d = %d)\n",val1, val2, and)
+    fmt.Printf("  %8b > 0x%2X > %3d\n", val1, val1, val1)
+    fmt.Printf("& %8b > 0x%2X > %3d\n", val2, val2, val2)
+    fmt.Printf("= %8b > 0x%2X > %3d\n", and, and, and)
+}
+```
+
 #### Exemplos:
  ```
 foo@bar ~:

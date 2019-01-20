@@ -1,19 +1,8 @@
-package main
+package src
 
 import (
     "fmt"
 )
-
-/*
-    bitwise operators
-
-     &   bitwise AND
-     |   bitwise OR
-     ^   bitwise XOR
-    &^   AND NOT
-    <<   left shift
-    >>   right shift
-*/
 func main() {
     var byte1 byte = 0xAA // 170(10) 0x0000AA(16) 10101010(2)
     var byte2 byte = 0xFF // 255(10) 0x0000FF(16) 11111111(2)
@@ -53,9 +42,9 @@ func main() {
      *
     **/
 
-    val1 := 0xAA
-    val2 := 0x63
-    and := val1 & val2
+    var val1 byte = 0xAA
+    var val2 byte = 0x63
+    var and  byte = val1 & val2
 
     fmt.Printf("(%d & %d = %d)\n",val1, val2, and)
     fmt.Printf("  %8b > 0x%2X > %3d\n", val1, val1, val1)
