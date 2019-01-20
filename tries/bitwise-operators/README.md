@@ -1,23 +1,26 @@
 ## Operadores Bitwise (bit-a-bit) GoLang:
-Em um tempo onde o hardware era escasso e o programador precisava aproveitar cada bit que estava disponível
-existia o recurso de operações binárias que eram usadas em várias técnicas de programação.
+Houve um tempo em que os recursos de hardware era escasso e o programador precisava aproveitar cada bit que estava disponível mara manter a usabilidade do programa.
+Existem em linguagem como C e C++ o recurso de operações bit-a-bit que eram usadas em várias técnicas de programação.
+Elas consistem em usar uma represantação binária de um dado (tudo é binário em computação) e usa as operações em cada bit da representação.
 
 GoLang não abriu mão de suportar esses tipos de operações e podem ser ultilizadas em algorítimos 
-para melhorar ainda mais a performace. sendo eles:
-```
+para melhorar ainda mais a performace. ou resolver problemas específicos.
+
+Operações de bitwise são muito usadas em sistemas de criptografia por exemplo.
+
+As existentes em Golang São:
+
 Operadores bitwise 
- &   bitwise AND
- |   bitwise OR
- ^   bitwise XOR
- ^   bitwise NOT (unário)
-&^   AND NOT
-<<   left shift
->>   right shift
-```
+[&   bitwise AND](#and)
+[|   bitwise OR](#or)
+[^   bitwise XOR](#xor)
+[^   bitwise NOT (unário)](#not)
+[&^  bitwise AND NOT](#andnot)
+[<<  bitwise left shift (writing)](#shiftleft)
+[>>  bitwise right shift(writing)](#shiftright)
 
 
-
-### Operador AND (&) :
+### Operador AND (&) : #{#and}
 Compara Bit por Bit se o valor é igual em ambos, caso sim ele retorna 1 senão 0 na posiçao do bit
 ```
 Tabela verdade
