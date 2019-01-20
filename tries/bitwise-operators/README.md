@@ -45,28 +45,28 @@ foo@bar ~:
 (134 & 120 = 0)
   10000110 > 0x86 > 134
 & 01111000 > 0x78 > 120
-= 00000000 > 0x00 > 0
+= 00000000 > 0x00 > 000
 ```
 ```
 foo@bar ~:
 (140 & 12 = 12)
   10001100 > 0x8C > 140
-& 00001100 > 0x0C > 12
-= 00001100 > 0x0C > 12
+& 00001100 > 0x0C > 012
+= 00001100 > 0x0C > 012
 ```
 ```
 foo@bar ~:
 (170 & 99 = 34)
   10101010 > 0xAA > 170
-& 01100011 > 0x63 > 99
-= 00100010 > 0x22 > 34
+& 01100011 > 0x63 > 099
+= 00100010 > 0x22 > 034
 ```
 
 
 
 ### Operador OR (|) :
-Compara Bit por Bit e se o valor de pelo menos uma posiçao entre os binarios eh 1
-Ele retorna 1 senao 0 na posiçao do bit
+Compara Bit por Bit e se o valor de pelo menos uma posiçao entre os binarios é 1
+Ele retorna 1 senão 0 na posição do bit
 ```
 Tabela verdade:
     0 | 0 = 0
@@ -74,7 +74,7 @@ Tabela verdade:
     1 | 0 = 1
     1 | 1 = 1
 ```
-#### Codigo:
+#### Código:
 ```go
 func main(){
     var val1 byte = 0xAA
@@ -100,13 +100,13 @@ foo@bar ~:
 foo@bar ~:
 (140 | 12 = 140)
   10001100 > 0x8C > 140
-| 00001100 > 0x0C >  12
+| 00001100 > 0x0C > 012
 = 10001100 > 0x8C > 140
 ```
 ```
 foo@bar ~:
 (170 | 99 = 235)
   10101010 > 0xAA > 170
-| 01100011 > 0x63 >  99
+| 01100011 > 0x63 > 099
 = 11101011 > 0xEB > 235
 ``` 
