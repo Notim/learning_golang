@@ -79,22 +79,24 @@ func Sort(sliceIn interface{}){
             out := Val.Index(ind).Interface()
 
             switch T := in.(type) {
-            case int:
-                if T > out.(int){
-                    in , out = out, in
+                case int:{
+                    if T > out.(int){
+                        in , out = out, in
+                    }
+                    break
                 }
-                break
-            case string:
-                if T > out.(string){
-                    in  , out = out, in
+                case string: {
+                    if T > out.(string){
+                        in  , out = out, in
+                    }
+                    break
                 }
-                break
-
-            case float64:
-                if T > out.(float64) {
-                    in , out = out, in
+                case float64:{
+                    if T > out.(float64) {
+                        in , out = out, in
+                    }
+                    break
                 }
-                break
             }
         }
     } else {
