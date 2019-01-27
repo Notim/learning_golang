@@ -49,7 +49,7 @@ func main() {
     (func(log string) {
         fmt.Println(log)
         nl = nl.OrderBy(func(Model interface{}) interface{} {
-            return Model.(model.Person).Name
+            return Model.(model.Person).ID
         })
     })("Running")
 
