@@ -39,7 +39,7 @@ func main() {
         count, hash := 0, ""
         for ha, co :=  range(value) {
             if co > count {
-                hash,count = ha, co
+                hash, count = ha, co
             }
         }
         fmt.Println(hash)
@@ -64,22 +64,3 @@ func ClearStr(str string) string {
 
     return str
 }
-
-/*
-one
-you
-as
-a
-test
-geekhunter
-*/
-
-/*
-6
-3 onetwoone
-3 believeyoucanandyouarehalfwaythere
-2 courtesyisasmuchamarkofagentlemanascourageasbraveness
-1 courtesyisasmuchamarkofagentlemanascourageasbraveness
-4 testingthecodetofindtheerrortestandtestagain
-10 weatgeekhunterhelpyoufindingtopgeekhunterjobs
-*/

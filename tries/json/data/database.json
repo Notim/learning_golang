@@ -1,0 +1,79 @@
+[
+    {
+        "Id": 1,
+        "Name": "Jonh da silva",
+        "Age": 21,
+        "CardNumber": 524458,
+        "Money"  : 32.5,
+        "Birth"  : "1998-01-12T00:00:00Z",
+        "Gender" : "Male",
+        "Country" : "Brazil",
+        "MaritalStatus" : "single"
+    },
+    {
+        "Id": 2,
+        "Name": "johnny pereira",
+        "Age": 25,
+        "CardNumber": 57821,
+        "Money"  : 17.19,
+        "Birth"  : "2019-01-27T15:43:17.228798949-02:00",
+        "Gender" : "Male",
+        "Country" : "Brazil",
+        "MaritalStatus" : "single"
+    },
+    {
+        "Id": 3,
+        "Name": "mary de souza",
+        "Age": 23,
+        "CardNumber": 522558,
+        "Money"  : 225.5,
+        "Birth"  : "1997-07-24T00:00:00Z",
+        "Gender" : "Male",
+        "Country" : "Brazil",
+        "MaritalStatus" : "single"
+    },
+    {
+        "Id": 4,
+        "Name": "petter agusto",
+        "Age": 32,
+        "CardNumber": 57821,
+        "Money"  : 65,
+        "Birth"  : "2019-01-27T15:43:17.228798805-02:00",
+        "Gender" : "Male",
+        "Country" : "Brazil",
+        "MaritalStatus" : "single"
+    },
+    {
+        "Id": 5,
+        "Name": "alessandro Pereira",
+        "Age": 35,
+        "CardNumber": 578443,
+        "Money"  : 177,
+        "Birth"  : "2019-01-27T15:43:17.228798805-02:00",
+        "Gender" : "Male",
+        "Country" : "Brazil",
+        "MaritalStatus" : "single"
+    },
+    {
+        "Id": 6,
+        "Name": "Larissa augusto",
+        "Age": 22,
+        "CardNumber": 48886,
+        "Money"  :455.60,
+        "Birth"  : "2019-01-27T15:43:17.228798805-02:00",
+        "Gender" : "Male",
+        "Country" : "Brazil",
+        "MaritalStatus" : "single"
+    },
+    {
+        "Id": 7,
+        "Name": "maria abulquerque",
+        "Age": 25,
+        "CardNumber": 8782326,
+        "Money"  :444.50,
+        "Birth"  : "2019-01-27T15:43:17.228798805-02:00",
+        "Gender" : "Male",
+        "Country" : "Brazil",
+        "MaritalStatus" : "single"
+    }
+]
