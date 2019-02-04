@@ -42,22 +42,31 @@ func main() {
         fmt.Println(log)
         nl = nl.Filter(func(x interface{}) bool {
             return x.(model.Person).Money > 0 &&
-                   strings.Contains(x.(model.Person).Country, "United States")
+                   !strings.Contains(x.(model.Person).Name, "Isadora")
         })
     })("Running")
 
     (func(log string) {
         fmt.Println(log)
         nl = nl.OrderBy(func(Model interface{}) interface{} {
-            return Model.(model.Person).ID
+            return Model.(model.Person).Name
         })
     })("Running")
 
-
-
     nl.Foreach(func(c interface{}) {
-        fmt.Printf("$%6.2f => %s\n", c.(model.Person).Money, c.(model.Person).Name)
+        fmt.Printf(
+            "#%5d\t| $%6.2f\t| %s\t| %s\n",
+            c.(model.Person).ID,
+            c.(model.Person).Money,
+            Abreviate(c.(model.Person).Name, 17),
+            c.(model.Person).Country,
+        )
     })
-    fmt.Println(nl.Lenght(), "Rows afected")
-
+    fmt.Println(nl.Lenght(), "Rows afected of", listPersons.Lenght())
+}
+func Abreviate(str string, rang int) string {
+    if len(str) > rang {
+        return str[:rang] + ".."
+    }
+    return str
 }

@@ -1,3 +1,13 @@
 *.xml
 *.iml
 *.log
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+/vendor/
+/Godeps/
+DATABASE

@@ -26,7 +26,7 @@ func main()  {
 
     var listPersons List.List
 
-    for index := 0; index < 1e5; index++ {
+    for index := 0; index < 1e6; index++ {
         var person = model.Person{
             ID:index,
             Age: rand.Intn(60),
