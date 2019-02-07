@@ -21,6 +21,7 @@ func main() {
     if err != nil {
         fmt.Print(err)
     }
+
     data = enc.Base64Decode(data)
 
     er := json.Unmarshal(data, &listPersons) // covert to list of maps
@@ -37,12 +38,11 @@ func main() {
         return p
     })
 
-
     (func(log string) {
         fmt.Println(log)
         nl = nl.Filter(func(x interface{}) bool {
             return x.(model.Person).Money > 0 &&
-                   !strings.Contains(x.(model.Person).Name, "Isadora")
+                   strings.Contains(x.(model.Person).Name, "Paulino")
         })
     })("Running")
 
