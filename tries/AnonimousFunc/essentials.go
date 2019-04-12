@@ -52,8 +52,8 @@ func main() {
 			return index
 		}
 
-		return // in go don nedd especify the var to return if you already atributted him
-	})()// void anonimous func
+		return // in go dont nedd especify the var to return if you already atributted him
+	})()// void anonymous func
 
 	fmt.Println(reflect.TypeOf(Add))
 
@@ -61,7 +61,7 @@ func main() {
 	 * the curious of this closures is the index value
 	 * He changed always when the Add() is called
 	 * like a property Obj from Poo
-	 * remember, Go isn't Poo lang (100%)
+	 * remember, Go isn't OOP lang (100%)
 	**/
 	fmt.Println(Add()) // index(private) = 1
 	fmt.Println(Add()) // index(private) = 2
