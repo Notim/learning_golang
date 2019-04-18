@@ -33,7 +33,7 @@ func (list *list) Append(it interface{}) {
     list._end = GetLast(list._start)
 }
 
-func GetNext(item *node) (retur string) {
+func Running(item *node) (retur string) {
     retur = retur + fmt.Sprintf("%v", item.value) + ", "
 
     if item.next != nil {
@@ -46,7 +46,7 @@ func GetNext(item *node) (retur string) {
 
 func (list *list) ToString() string {
 
-    return "[ " + GetNext(list._start) + " ]"
+    return "[ " + Running(list._start) + " ]"
 }
 
 func main() {
