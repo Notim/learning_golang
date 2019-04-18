@@ -34,7 +34,7 @@ func (list *list) Append(it string) {
 }
 
 func GetNext(item *node) (retur string) {
-    fmt.Println(item.value)
+    retur = retur + item.value
 
     if item.next != nil {
         retur = retur + GetNext(item.next)
