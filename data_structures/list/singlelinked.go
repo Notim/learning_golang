@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 type node struct {
-    value  string
+    value  interface{}
     next   *node
 }
 
@@ -19,7 +19,7 @@ func GetLast(item *node) (last *node) {
     return item
 }
 
-func (list *list) Append(it string) {
+func (list *list) Append(it interface{}) {
     newItem := &node{ value: it }
 
     if list._start == nil {
@@ -34,33 +34,34 @@ func (list *list) Append(it string) {
 }
 
 func GetNext(item *node) (retur string) {
-    retur = retur + item.value
+    retur = retur + fmt.Sprintf("%v", item.value) + ", "
 
     if item.next != nil {
         retur = retur + GetNext(item.next)
 
         return retur
     }
-
-    return item.value
+    return fmt.Sprintf("%v", item.value)
 }
 
-func (list *list) Print() string {
-    fmt.Println(GetLast(list._start))
+func (list *list) ToString() string {
 
-    return GetNext(list._start)
+    return "[ " + GetNext(list._start) + " ]"
 }
 
 func main() {
     var listItens list
 
-    listItens.Append("5")
-    listItens.Append("7")
-    listItens.Append("8")
-    listItens.Append("2")
-    listItens.Append("4")
+    listItens.Append(5)
+    listItens.Append(7)
+    listItens.Append(18)
+    listItens.Append(2.2)
+    listItens.Append(4)
+    listItens.Append("A")
+    listItens.Append(list{})
+    listItens.Append(node{})
 
-    fmt.Println(listItens.Print())
+    fmt.Println(listItens.ToString())
 
     /*
     var node1 node
