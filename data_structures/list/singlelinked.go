@@ -2,83 +2,95 @@ package main
 
 import "fmt"
 
-type item struct {
-    Val   string
-    next  *item
+type node struct {
+    value  string
+    next   *node
 }
-type list struct {
-    _start *item
-    _end   *item
-}
-func (list *list) add(it string) {
-    fmt.Println(list._start, list._end)
 
-    newItem := &item{ Val:it }
+type list struct {
+    _start *node
+    _end   *node
+}
+
+func GetLast(item *node) (last *node) {
+    if item.next != nil {
+        return GetLast(item.next)
+    }
+    return item
+}
+
+func (list *list) Append(it string) {
+    newItem := &node{ value: it }
 
     if list._start == nil {
         list._start = newItem
+        list._end   = newItem
+
+        return
     }
-    var before, after *item
 
-    before = list._start
-    after  = before.next
-
-    for after != nil{
-        swap := before
-        before = after
-        after  = swap.next
-    }
-    after = newItem
-
-    list._end = after
+    GetLast(list._start).next = newItem
+    list._end = GetLast(list._start)
 }
-func (list *list) print() string {
-    var before, after *item
 
-    fmt.Println(list._start)
+func GetNext(item *node) (retur string) {
+    fmt.Println(item.value)
 
-    before = list._start
-    after  = before.next
+    if item.next != nil {
+        retur = retur + GetNext(item.next)
 
-    str := "[ "
-
-    for after != nil{
-        str += after.Val + ", "
-
-        swap := before
-        before = after
-        after  = swap.next
+        return retur
     }
 
-    str += " ]"
+    return item.value
+}
 
-    return str
+func (list *list) Print() string {
+    fmt.Println(GetLast(list._start))
+
+    return GetNext(list._start)
 }
 
 func main() {
     var listItens list
-    listItens.add("5")
-    listItens.add("7")
-    listItens.add("8")
-    listItens.add("2")
-    listItens.add("4")
 
-    fmt.Println(listItens.print())
+    listItens.Append("5")
+    listItens.Append("7")
+    listItens.Append("8")
+    listItens.Append("2")
+    listItens.Append("4")
+
+    fmt.Println(listItens.Print())
 
     /*
-    var no1 item
-    var no2 item
-    var no3 item
+    var node1 node
+    var node2 node
+    var node3 node
+    var node4 node
+    var node5 node
 
-    no1.value = 5
-    no1.next = &no2
+    node1.value = "ola"
+    node1.next = &node2
 
-    no2.value = 7
-    no2.next = &no3
+    node2.value = " Mundo"
+    node2.next = &node3
 
-    no3.value = 9
-    no3.next = nil
+    node3.value = " filha"
+    node3.next = &node4
 
-    fmt.Print(no1, no2, no3)
+    node4.value = " da putta"
+    node4.next = &node5
+
+    node5.value = " Teste"
+    node5.next = nil
+
+    fmt.Println(
+        node1.value,
+        node1.next.value,
+        node1.next.next.value,
+        node1.next.next.next.value,
+        node1.next.next.next.next,
+    )
+    fmt.Println(GetLast(&node1))
     */
 }
