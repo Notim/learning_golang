@@ -1,19 +1,31 @@
 package main
 
 type node struct {
-    prev   *node
+    prev   *IIterable
+    next   *IIterable
     value  interface{}
-    next   *node
 }
 
-/*
-func Running(item *node) (retur string) {
-    retur = retur + fmt.Sprintf("%v", item.value) + ", "
+func (node *node) GetPrev() IIterable {
+    return *node.prev
+}
 
-    if item.next != nil {
-        retur = retur + Running(item.next)
+func (node *node) GetNext() IIterable{
+    return *node.next
+}
 
-        return retur
-    }
-    return fmt.Sprintf("%v", item.value)
-}*/
+func (node *node) SetPrev(inside *IIterable) {
+    node.prev = inside
+}
+
+func (node *node) SetNext(inside *IIterable){
+    node.next = inside
+}
+
+func (node *node) GetValue() interface{}{
+    return node.value
+}
+
+func (node *node) SetValue(it interface{}) {
+    node.value = it
+}

@@ -3,26 +3,12 @@ package main
 import "fmt"
 
 type List struct {
-    _start *node
-    _end   *node
+    _start IIterable
+    _end   IIterable
 }
 
-/*func (list *List) Append(it interface{}) {
-    newItem := &node{value:it}
-
-    if list._start == nil {
-        list._start = newItem
-        list._end   = newItem
-
-        return
-    }
-
-    GetLast(list._start).next = newItem
-    list._end = GetLast(list._start)
-}*/
-
-func (list *List) Add(item interface{}){
-    newNode := &node{ value: item }
+func (list *List) Add(item interface{}) {
+    var newNode IIterable = &node{ value: item }
 
     if list._start == nil {
         list._start = newNode
@@ -32,11 +18,11 @@ func (list *List) Add(item interface{}){
 
     if list._end != nil{
         before = list._end
-        list._end.next = newNode
+        list._end.SetNext(&newNode)
     }
 
     list._end = newNode
-    list._end.prev = before
+    list._end.SetPrev(&before)
 }
 
 func (list *List) ToString() string {
@@ -45,8 +31,8 @@ func (list *List) ToString() string {
     current := list._start
 
     for current != nil {
-        str += fmt.Sprintf("%v, ", current.value)
-        current = current.next
+        str += fmt.Sprintf("%v, ", current.GetValue())
+        current = current.GetNext()
     }
 
     return "[ " + str + " ]"
@@ -57,12 +43,4 @@ func (list *List) Length() int {
         return 0
     }
     return 0
-}
-
-func (list *List) GetPrev(it interface{}) interface{} {
-    return nil
-}
-
-func (list *List) GetNext(it interface{}) interface{} {
-    return nil
 }

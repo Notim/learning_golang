@@ -7,8 +7,6 @@ func main() {
 
     listItens = new(List)
 
-
-    listItens.GetNext(5)
     /*
     listItens.Append(5)
     listItens.Append(7)
@@ -19,6 +17,7 @@ func main() {
     listItens.Append(listItens)
     listItens.Append(&node{ value : 5 })
     */
+
     listItens.Add(5)
     listItens.Add(7)
     listItens.Add(18)
@@ -28,16 +27,6 @@ func main() {
     listItens.Add(nil)
     listItens.Add(listItens)
     listItens.Add(&listItens)
-    listItens.Add(
-        &node{
-            prev:&node{
-                value:nil,
-            },
-            value:2,
-            next: &node{
-                value:nil,
-            },
-        })
     listItens.Add(new(node))
 
     fmt.Println(listItens.Length())
