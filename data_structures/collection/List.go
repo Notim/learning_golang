@@ -55,9 +55,21 @@ func (list *List) Remove(index uint64){
 
 }
 func (list *List) Get(index uint64) interface{}{
-    return struct {
-        Title string
-    }{
-        "title",
+    if list.Length() == 0 || int(index ) <= list.Length() {
+        panic("index out of range!")
     }
+
+    current, value := list._start, list._start.GetValue()
+
+    for in := 0 ; current != nil; in ++{
+
+        current = current.GetNext()
+        value   = current.GetValue()
+
+        if in == int(index) {
+            return value
+        }
+    }
+
+    return value
 }

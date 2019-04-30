@@ -34,11 +34,11 @@ func main() {
         DataNascimento: time.Now(),
     })
 
-
     fmt.Println(listItens.Length())
     fmt.Println(listItens)
     fmt.Println(listItens.ToString())
     fmt.Println(listItens.Get(0))
+
     /*
     var reference1, reference2 *node
 
