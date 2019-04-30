@@ -8,7 +8,8 @@ type List struct {
 }
 
 func (list *List) Add(item interface{}) {
-    var newNode IIterable = &node{ value: item }
+    var newNode IIterable = new(node)
+    newNode.SetValue(item)
 
     if list._start == nil {
         list._start = newNode
@@ -16,13 +17,13 @@ func (list *List) Add(item interface{}) {
 
     before := list._end
 
-    if list._end != nil{
+    if list._end != nil {
         before = list._end
-        list._end.SetNext(&newNode)
+        list._end.SetNext(newNode)
     }
 
     list._end = newNode
-    list._end.SetPrev(&before)
+    list._end.SetPrev(before)
 }
 
 func (list *List) ToString() string {
@@ -38,9 +39,25 @@ func (list *List) ToString() string {
     return "[ " + str + " ]"
 }
 
-func (list *List) Length() int {
-    if list._start == nil {
-        return 0
+func (list *List) Length() (cont int){
+    cont = 0
+
+    current := list._start
+
+    for current != nil {
+        cont ++
+        current = current.GetNext()
     }
-    return 0
+    return
+}
+
+func (list *List) Remove(index uint64){
+
+}
+func (list *List) Get(index uint64) interface{}{
+    return struct {
+        Title string
+    }{
+        "title",
+    }
 }

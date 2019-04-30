@@ -4,9 +4,9 @@ type IIterable interface {
     GetNext() IIterable
     GetPrev() IIterable
 
-    SetNext(it *IIterable)
-    SetPrev(it *IIterable)
+    SetNext(node IIterable)
+    SetPrev(node IIterable)
 
     GetValue() interface{}
-    SetValue(it interface{})
+    SetValue(node interface{})
 }

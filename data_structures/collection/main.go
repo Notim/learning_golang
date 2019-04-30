@@ -1,46 +1,51 @@
 package main
 
-import "fmt"
+import (
+    "fmt"
+    "time"
+)
+
+type Aluno struct{
+    Id             int64
+    Nome           string
+    Sobrenome      string
+    DataNascimento time.Time
+}
 
 func main() {
-    var listItens IList
+    var listItens IList = new(List)
 
-    listItens = new(List)
+    listItens.Add(&Aluno{
+        Id:1,
+        Nome:"Joao vitor",
+        Sobrenome:"paulino martins",
+        DataNascimento: time.Now(),
+    })
+    listItens.Add(&Aluno{
+        Id:2,
+        Nome:"Maria",
+        Sobrenome:"Albuquerque da silva",
+        DataNascimento: time.Now(),
+    })
+    listItens.Add(&Aluno{
+        Id:3,
+        Nome:"Washington",
+        Sobrenome:"Almeida Coelho",
+        DataNascimento: time.Now(),
+    })
 
-    /*
-    listItens.Append(5)
-    listItens.Append(7)
-    listItens.Append(18)
-    listItens.Append(2.2)
-    listItens.Append(4)
-    listItens.Append("A")
-    listItens.Append(listItens)
-    listItens.Append(&node{ value : 5 })
-    */
-
-    listItens.Add(5)
-    listItens.Add(7)
-    listItens.Add(18)
-    listItens.Add(2.2)
-    listItens.Add(4)
-    listItens.Add("A")
-    listItens.Add(nil)
-    listItens.Add(listItens)
-    listItens.Add(&listItens)
-    listItens.Add(new(node))
 
     fmt.Println(listItens.Length())
+    fmt.Println(listItens)
     fmt.Println(listItens.ToString())
-
+    fmt.Println(listItens.Get(0))
+    /*
     var reference1, reference2 *node
 
-    n := &node{value:3}
+    n := &node{__value:3}
     reference1, reference2 = n, n
 
     fmt.Println(*reference1 == *reference2)
     fmt.Printf("%p %p %p\n", reference1, reference2, n)
-}
-
-func test(action func() string) string {
-    return action() + " Foi"
+    */
 }

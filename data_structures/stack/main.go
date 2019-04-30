@@ -18,36 +18,33 @@ type node struct {
     __value interface{}
 }
 
-func (node node) GetNext() IIterable {
+func (node *node) GetNext() IIterable {
     return node.__next
 }
-
-func (node node) GetPrev() IIterable {
+func (node *node) GetPrev() IIterable {
     return node.__prev
 }
-
-func (node node) SetNext(new IIterable){
+func (node *node) SetNext(new IIterable){
     node.__next = new
 }
-func (node node) SetPrev(new IIterable){
+func (node *node) SetPrev(new IIterable){
     node.__prev = new
 }
-
-func (node node) GetValue() interface{} {
+func (node *node) GetValue() interface{} {
     return node.__value
 }
-
-func (node node) SetValue(new interface{}) {
+func (node *node) SetValue(new interface{}) {
     node.__value = new
 }
-
 
 func main() {
     var node1 IIterable = new(node)
     var node2 IIterable = new(node)
 
-    fmt.Println(node1, node2)
+    node1.SetNext(node2)
+    node1.SetValue(5)
 
-    fmt.Println(node1, node2)
+    node2.SetValue("ABC - ZXY")
 
+    fmt.Println(node1.GetValue(), node1.GetNext().GetValue())
 }

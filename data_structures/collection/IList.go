@@ -1,8 +1,12 @@
 package main
 
-type IList interface {
+type ICollection interface {
     IEnumerable
 
-    ToString() string
     Add(item interface{})
+    Remove(index uint64)
+    Get (index uint64) interface{}
+}
+type IList interface {
+    ICollection
 }

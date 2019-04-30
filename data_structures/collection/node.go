@@ -1,31 +1,26 @@
 package main
 
 type node struct {
-    prev   *IIterable
-    next   *IIterable
-    value  interface{}
+    __prev IIterable
+    __next IIterable
+    __value interface{}
 }
 
+func (node *node) GetNext() IIterable {
+    return node.__next
+}
 func (node *node) GetPrev() IIterable {
-    return *node.prev
+    return node.__prev
 }
-
-func (node *node) GetNext() IIterable{
-    return *node.next
+func (node *node) SetNext(new IIterable){
+    node.__next = new
 }
-
-func (node *node) SetPrev(inside *IIterable) {
-    node.prev = inside
+func (node *node) SetPrev(new IIterable){
+    node.__prev = new
 }
-
-func (node *node) SetNext(inside *IIterable){
-    node.next = inside
+func (node *node) GetValue() interface{} {
+    return node.__value
 }
-
-func (node *node) GetValue() interface{}{
-    return node.value
-}
-
-func (node *node) SetValue(it interface{}) {
-    node.value = it
+func (node *node) SetValue(new interface{}) {
+    node.__value = new
 }
