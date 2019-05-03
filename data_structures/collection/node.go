@@ -1,26 +1,42 @@
 package main
 
+import "fmt"
+
 type node struct {
-    __prev IIterable
-    __next IIterable
+    __ref1 IIterable
+    __ref2 IIterable
     __value interface{}
 }
 
-func (node *node) GetNext() IIterable {
-    return node.__next
+func (this *node) GetNext() IIterable {
+    return this.__ref1
 }
-func (node *node) GetPrev() IIterable {
-    return node.__prev
+func (this *node) GetPrev() IIterable {
+    return this.__ref2
 }
-func (node *node) SetNext(new IIterable){
-    node.__next = new
+func (this *node) SetNext(new IIterable){
+    if new != nil {
+        this.__ref1 = new
+    }
+    return
 }
-func (node *node) SetPrev(new IIterable){
-    node.__prev = new
+func (this *node) SetPrev(new IIterable){
+    if new != nil {
+        this.__ref2 = new
+    }
+    return
 }
-func (node *node) GetValue() interface{} {
-    return node.__value
+func (this *node) GetValue() interface{} {
+    return this.__value
 }
-func (node *node) SetValue(new interface{}) {
-    node.__value = new
+func (this *node) SetValue(new interface{}) {
+    this.__value = new
+}
+func (this *node) ToString() (str string) {
+    str += "\r\nthis ref: " + fmt.Sprintf("%p", this)
+    str += "\r\n\tref prev: " + fmt.Sprintf("%p", this.GetPrev())
+    str += "\r\n\tref next: " + fmt.Sprintf("%p", this.GetNext())
+    str += "\r\n\tvalue: " + fmt.Sprintf("%v", this.__value)
+
+    return
 }

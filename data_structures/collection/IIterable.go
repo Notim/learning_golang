@@ -1,6 +1,7 @@
 package main
 
 type IIterable interface {
+
     GetNext() IIterable
     GetPrev() IIterable
 
@@ -9,4 +10,6 @@ type IIterable interface {
 
     GetValue() interface{}
     SetValue(node interface{})
+
+    ToString() string
 }

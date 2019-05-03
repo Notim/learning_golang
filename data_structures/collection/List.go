@@ -3,73 +3,92 @@ package main
 import "fmt"
 
 type List struct {
-    _start IIterable
-    _end   IIterable
+    start   IIterable
+    end     IIterable
+    current IIterable
+    value   interface{}
 }
 
-func (list *List) Add(item interface{}) {
-    var newNode IIterable = new(node)
-    newNode.SetValue(item)
-
-    if list._start == nil {
-        list._start = newNode
+func (list *List) Add(items ...interface{}) {
+    for _, item := range items {
+        var newNode IIterable = new(node)
+        newNode.SetValue(item)
+        if list.start == nil {
+            list.start = newNode
+        }
+        before := list.end
+        if list.end != nil {
+            before = list.end
+            list.end.SetNext(newNode)
+        }
+        list.end = newNode
+        list.end.SetPrev(before)
     }
-
-    before := list._end
-
-    if list._end != nil {
-        before = list._end
-        list._end.SetNext(newNode)
-    }
-
-    list._end = newNode
-    list._end.SetPrev(before)
 }
 
-func (list *List) ToString() string {
-    str := ""
+func (this *List) Remove(index uint64) {
+    if this.Length() == 0 || int(index) >= this.Length() {
+        panic("index out of range")
+    }
 
-    current := list._start
+    in := 0
+    for in, this.current = 0, this.start ; this.current != nil; in ++ {
+        if in == int(index) {
+            prev        := this.current.GetPrev()
+            this.current = this.current.GetNext()
 
-    for current != nil {
-        str += fmt.Sprintf("%v, ", current.GetValue())
+            this.current.SetPrev(prev)
+            prev.SetNext(this.current)
+        }
+        this.current = this.current.GetNext()
+        this.end = this.current
+    }
+
+    for current := this.start; current != nil ; {
+        fmt.Printf("%v\n", current.ToString())
+
         current = current.GetNext()
     }
 
-    return "[ " + str + " ]"
-}
-
-func (list *List) Length() (cont int){
-    cont = 0
-
-    current := list._start
-
-    for current != nil {
-        cont ++
-        current = current.GetNext()
-    }
     return
 }
 
-func (list *List) Remove(index uint64){
-
+func (this *List) ToString() string {
+    str := ""
+    this.current = this.start
+    for this.current != nil {
+        str += fmt.Sprintf("%v, ", this.current.GetValue())
+        this.current = this.current.GetNext()
+    }
+    return "[ " + str + " ]"
 }
-func (list *List) Get(index uint64) interface{}{
-    if list.Length() == 0 || int(index ) <= list.Length() {
-        panic("index out of range!")
+
+func (this *List) Length() (cont int) {
+    cont = 0
+    this.current = this.start
+    for this.current != nil {
+        cont ++
+        this.current = this.current.GetNext()
     }
 
-    current, value := list._start, list._start.GetValue()
+    return
+}
 
-    for in := 0 ; current != nil; in ++{
+func (this *List) Iterate() (uint64, interface{}){
+    return 0, nil
+}
 
-        current = current.GetNext()
-        value   = current.GetValue()
-
+func (this *List) Get(index uint64) interface{} {
+    if this.Length() == 0 || int(index) >= this.Length() {
+        return nil
+    }
+    this.current , this.value = this.start, this.start.GetValue()
+    for in := 0 ; this.current != nil; in ++ {
         if in == int(index) {
-            return value
+            return this.value
         }
+        this.current = this.current.GetNext()
+        this.value   = this.current.GetValue()
     }
-
-    return value
+    return this.value
 }
