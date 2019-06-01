@@ -1,4 +1,4 @@
-package main
+package collection
 
 type ICollection interface {
     IEnumerable

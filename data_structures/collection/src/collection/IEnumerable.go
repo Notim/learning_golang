@@ -1,4 +1,4 @@
-package main
+package collection
 
 type IEnumerable interface {
     Length() int
