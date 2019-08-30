@@ -44,6 +44,7 @@ func main()  {
 
     fmt.Printf("%s", enc.Base64Encode(j))
 }
+
 func LoadNames(){
     names, err := os.Open("./data/names")
     if err != nil {
@@ -113,7 +114,7 @@ func GenerateStatus() string{
 
     return status[rand.Intn(4)]
 }
-func GenerateCountry() string{
+func GenerateCountry() string {
     var Country = map[int]string{}
     Country[0] = "United Kingdom"
     Country[1] = "United States"

@@ -2,7 +2,6 @@ package main
 
 import (
     "fmt"
-    "time"
     "unsafe"
 )
 
@@ -12,14 +11,15 @@ import (
  * Teste com cuidado saporra !!
  * 2019 @ notim <joao.paulino@yahoo.com.br>
 **/
-func infinityloop(from string) {
-    var run [1e9]int8 // 1byte * 1e9 => 1000000bytes (1GB)
+func Infinityloop(from string) string {
+    var run [100000000]int8 // 1byte * 1e9 => 1000000bytes (1GB)
 
     for index , _ := range(run){
         run[index] = 0
     }
-    defer fmt.Printf("%v ==> %v\n" ,from, ShowSize(unsafe.Sizeof(run)))
+    return fmt.Sprintf("%v ==> %v" ,from, ShowSize(unsafe.Sizeof(run)))
 }
+
 func ShowSize(val uintptr) (ret string) {
     ret = fmt.Sprintf("%dB", val)
 
@@ -41,38 +41,5 @@ func ShowSize(val uintptr) (ret string) {
 
         return
     }
-
     return
-}
-
-func main() {
-    var rontinas = make(map[string]string)
-
-    go (func(arg string) {
-        infinityloop(arg)
-        rontinas["GO1"] = "Done"
-    })("Go 1")
-
-    go (func(arg string) {
-        infinityloop(arg)
-        rontinas["GO2"] = "Done"
-    })("Go 2")
-
-    go (func(arg string) {
-        infinityloop(arg)
-        rontinas["GO3"] = "Done"
-    })("Go 3")
-
-    go (func(arg string) {
-        infinityloop(arg)
-        rontinas["GO4"] = "Done"
-    })("Go 4")
-
-    for {
-        if (rontinas["GO1"] == "Done" && rontinas["GO2"] == "Done" && rontinas["GO3"] == "Done" && rontinas["GO4"] == "Done") {
-            break
-        }else {
-            time.Sleep(1000)
-        }
-    }
 }
